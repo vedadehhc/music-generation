@@ -1,0 +1,3 @@
+- [x] Shift.java
+- [ ] Note.java
+- [ ] Tone.java

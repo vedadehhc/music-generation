@@ -1,9 +1,0 @@
-- [x] Shift.java
-- [x] Note.java
-- [x] Tone.java
-- [x] Chord.java
-- [x] Key.java
-- [x] PlayedChord.java
-- [x] PlayedNote.java
-- [x] Range.java
-- [x] Rhythm.java

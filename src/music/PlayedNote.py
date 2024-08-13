@@ -1,7 +1,7 @@
 from typing import Optional
-from .Note import Note
-from .Tone import Tone
-from .Shift import Shift
+from Note import Note
+from Tone import Tone
+from Shift import Shift
 
 class PlayedNote:
     """

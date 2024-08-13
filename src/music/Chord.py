@@ -1,6 +1,6 @@
 from typing import List, Optional
-from .Note import Note
-from .Shift import Shift
+from Note import Note
+from Shift import Shift
 
 class Chord:
     romanNumeralChords: List[str] = ["I", "ii", "iii", "IV", "V", "vi", "viio"]

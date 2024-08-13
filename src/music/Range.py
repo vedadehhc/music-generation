@@ -1,6 +1,6 @@
 from typing import List, Optional
-from .Note import Note
-from .Key import Key
+from Note import Note
+from Key import Key
 
 class Range:
     # Bass, Tenor, Alto, and Soprano voice Ranges
@@ -67,8 +67,8 @@ Range.voiceRanges = [
 
 # Small tests
 if __name__ == "__main__":
-    from .Tone import Tone
-    from .Shift import Shift
+    from Tone import Tone
+    from Shift import Shift
 
     # Test Range creation and methods
     test_range = Range(48, 60)

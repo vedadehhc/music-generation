@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List, Optional
-from .Shift import Shift
-from .Tone import Tone
+from Shift import Shift
+from Tone import Tone
 
 class Note:
     @staticmethod

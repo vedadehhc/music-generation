@@ -1,9 +1,9 @@
 from enum import Enum
 from typing import List, Optional
-from .Note import Note
-from .Chord import Chord
-from .Tone import Tone
-from .Shift import Shift
+from Note import Note
+from Chord import Chord
+from Tone import Tone
+from Shift import Shift
 
 class KeyType(Enum):
     Major = 1

@@ -1,5 +1,5 @@
 from typing import List
-from .PlayedNote import PlayedNote
+from PlayedNote import PlayedNote
 
 class PlayedChord:
     def __init__(self, duration: int = 500):
@@ -35,9 +35,9 @@ class PlayedChord:
 
 # Small tests
 if __name__ == "__main__":
-    from .Note import Note
-    from .Tone import Tone
-    from .Shift import Shift
+    from Note import Note
+    from Tone import Tone
+    from Shift import Shift
 
     # Create a C major chord
     c_note = Note(Tone.C, Shift.Natural, 4)

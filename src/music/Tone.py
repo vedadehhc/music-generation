@@ -20,7 +20,7 @@ class Tone(Enum):
     def __str__(self) -> str:
         if self == Tone.REST:
             return "REST"
-        return chr(self.tones.index(self) + ord('A'))
+        return self.name
 
     @classmethod
     def getToneFromString(cls, s: str) -> Optional['Tone']:

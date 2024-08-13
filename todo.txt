@@ -3,3 +3,4 @@
 - [x] Tone.java
 - [x] Chord.java
 - [x] Key.java
+- [x] PlayedChord.java

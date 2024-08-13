@@ -35,14 +35,18 @@ class Note:
             self.shift = Shift.Natural
             end = 1
 
-            if len(s) >= 3 and Shift.getShiftFromString(s[1:3]) is not None:
-                self.shift = Shift.getShiftFromString(s[1:3])
-                end = 3
-            elif Shift.getShiftFromString(s[1:2]) is not None:
-                self.shift = Shift.getShiftFromString(s[1:2])
-                end = 2
+            if len(s) >= 2:
+                shift_str = s[1:3] if len(s) >= 3 else s[1]
+                shift = Shift.getShiftFromString(shift_str)
+                if shift is not None:
+                    self.shift = shift
+                    end = 3 if len(shift_str) == 2 else 2
 
-            self.octave = int(s[end:])
+            try:
+                self.octave = int(s[end:])
+            except ValueError:
+                raise ValueError(f"Invalid octave in note string: {s}")
+
         elif len(args) == 3:
             self.tone, self.shift, self.octave = args
         elif len(args) == 1 and isinstance(args[0], Tone):

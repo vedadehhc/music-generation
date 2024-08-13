@@ -26,9 +26,9 @@ class Tone(Enum):
     def getToneFromString(cls, s: str) -> Optional['Tone']:
         if s == "REST":
             return cls.REST
-        index = ord(s[0]) - ord('A')
-        if 0 <= index < len(cls.tones):
-            return cls.tones[index]
+        for tone in cls.tones:
+            if tone.name == s:
+                return tone
         return None
 
 # Small tests

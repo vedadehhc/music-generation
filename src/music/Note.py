@@ -28,25 +28,29 @@ class Note:
     def getNoteFromString(s: str) -> 'Note':
         return Note(s)
 
-    def __init__(self, tone: Tone, shift: Shift = Shift.Natural, octave: int = 0):
-        self.tone = tone
-        self.shift = shift
-        self.octave = octave
+    def __init__(self, *args):
+        if len(args) == 1 and isinstance(args[0], str):
+            s = args[0]
+            self.tone = Tone.getToneFromString(s[0])
+            self.shift = Shift.Natural
+            end = 1
 
-    def __init__(self, s: str):
-        self.tone = Tone.getToneFromString(s[0])
+            if len(s) >= 3 and Shift.getShiftFromString(s[1:3]) is not None:
+                self.shift = Shift.getShiftFromString(s[1:3])
+                end = 3
+            elif Shift.getShiftFromString(s[1:2]) is not None:
+                self.shift = Shift.getShiftFromString(s[1:2])
+                end = 2
 
-        self.shift = Shift.Natural
-        end = 1
-
-        if len(s) >= 3 and Shift.getShiftFromString(s[1:3]) is not None:
-            self.shift = Shift.getShiftFromString(s[1:3])
-            end = 3
-        elif Shift.getShiftFromString(s[1:2]) is not None:
-            self.shift = Shift.getShiftFromString(s[1:2])
-            end = 2
-
-        self.octave = int(s[end:])
+            self.octave = int(s[end:])
+        elif len(args) == 3:
+            self.tone, self.shift, self.octave = args
+        elif len(args) == 1 and isinstance(args[0], Tone):
+            self.tone = args[0]
+            self.shift = Shift.Natural
+            self.octave = 0
+        else:
+            raise ValueError("Invalid arguments for Note constructor")
 
     def shiftOctave(self, amt: int) -> 'Note':
         return Note(self.tone, self.shift, self.octave + amt)

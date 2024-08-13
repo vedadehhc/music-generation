@@ -26,7 +26,7 @@ class Tone(Enum):
     def getToneFromString(cls, s: str) -> Optional['Tone']:
         if s == "REST":
             return cls.REST
-        for tone in cls.tones:
+        for tone in cls:
             if tone.name == s:
                 return tone
         return None

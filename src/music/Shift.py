@@ -15,7 +15,7 @@ class Shift(Enum):
         return self.value
 
     def __str__(self) -> str:
-        return self.names[self.shifts.index(self)]
+        return self.names[self.value + 2]
 
     @classmethod
     def getShiftFromString(cls, s: str) -> Optional['Shift']:

@@ -5,3 +5,4 @@
 - [x] Key.java
 - [x] PlayedChord.java
 - [x] PlayedNote.java
+- [x] Range.java

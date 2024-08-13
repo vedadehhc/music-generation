@@ -2,3 +2,4 @@
 - [x] Note.java
 - [x] Tone.java
 - [x] Chord.java
+- [x] Key.java
